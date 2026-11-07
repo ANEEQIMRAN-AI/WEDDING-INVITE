@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiza Weds Hasaan — Barat Invitation · 2 January 2027</title>
+<meta name="description" content="You are cordially invited to the Barat Ceremony of Fiza Abdullah and Muhammad Hasaan — 2 January 2027, Elysian Marquee, Model Town, Lahore.">
+<meta name="theme-color" content="#3d0a14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fiza Abdullah weds Muhammad Hasaan — Barat Invitation">
+<meta property="og:description" content="You are cordially invited to the Barat Ceremony · 2 January 2027 · Elysian Marquee, Model Town, Lahore.">
+<!-- AFTER DEPLOYING: replace SITE_URL with your real address (absolute URLs are required for WhatsApp/Facebook previews) -->
+<meta property="og:url" content="SITE_URL/">
+<meta property="og:image" content="SITE_URL/images/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/great-vibes-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- ================= INTRO: sealed envelope → invitation text ================= -->
+<div class="intro" id="intro" data-stage="a" role="dialog" aria-modal="true" aria-label="Invitation introduction">
+  <div class="particles" aria-hidden="true"></div>
+  <button type="button" class="skip" id="skip">Skip intro</button>
+
+  <section class="stage stage-a" aria-label="Sealed envelope">
+    <div class="env-wrap" id="envWrap">
+      <img src="images/envelope.webp" alt="A cream envelope with burgundy florals and a red wax seal" width="772" height="936" decoding="async">
+      <span class="env-sweep" aria-hidden="true"></span>
+      <button type="button" class="seal-btn" id="seal" aria-label="Break the wax seal to open the invitation"><span class="ring"></span><span class="burst"></span></button>
+    </div>
+    <p class="tap-hint">Tap the seal to open</p>
+  </section>
+
+  <section class="stage stage-b" aria-label="Invitation">
+    <div class="ornate">
+      <p class="bismillah st" style="--i:0" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <p class="eyebrow st" style="--i:1">With the blessings of Allah</p>
+      <h1 class="script name st" style="--i:2" data-bind="bride"></h1>
+      <p class="weds st" style="--i:3">Weds</p>
+      <h1 class="script name st" style="--i:4" data-bind="groom"></h1>
+      <div class="gold-line st" style="--i:5" aria-hidden="true"></div>
+      <p class="eyebrow st" style="--i:6">You are cordially invited to celebrate the <span data-bind="title"></span></p>
+      <p class="serif strong st" style="--i:7" data-bind="dateLabel"></p>
+      <p class="eyebrow st" style="--i:8"><span data-bind="venue"></span> · <span data-bind="area"></span></p>
+      <button type="button" class="btn btn-gold st" style="--i:9" id="open">Open Invitation</button>
+    </div>
+  </section>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="topbar" aria-label="Primary">
+  <a href="#top" class="brand" aria-label="Back to top">F<small>&amp;</small>H</a>
+  <div><a href="#invitation">Invitation</a><a href="#venue">Venue</a><a href="#details">Details</a>
+  <button type="button" class="btn btn-ghost sm" data-share>Share</button></div>
+</nav>
+
+<main>
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-bg" data-parallax="0.06">
+    <div class="florals" aria-hidden="true">
+      <img class="f f-tl" src="images/floral-top.webp" alt="" width="380" height="560" decoding="async">
+      <img class="f f-tr" src="images/floral-top.webp" alt="" width="380" height="560" decoding="async">
+      <img class="f f-bl" src="images/floral-bottom.webp" alt="" width="224" height="352" decoding="async">
+      <img class="f f-br" src="images/floral-bottom.webp" alt="" width="224" height="352" decoding="async">
+    </div>
+  </div>
+  <div class="particles" aria-hidden="true"></div>
+  <div class="hero-content" data-parallax="-0.12">
+    <p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p class="eyebrow">With the blessings of Allah</p>
+    <h2 class="script hero-name" data-bind="bride"></h2>
+    <p class="weds">Weds</p>
+    <h2 class="script hero-name groom" data-bind="groom"></h2>
+    <div class="gold-line" aria-hidden="true"></div>
+    <p class="eyebrow">You are cordially invited to the</p>
+    <p class="urdu" lang="ur" dir="rtl" data-bind="titleUrdu"></p>
+    <p class="serif title" data-bind="title"></p>
+    <p class="serif date" data-bind="dateLabel"></p>
+    <p class="venue-line"><span class="vn" data-bind="venue"></span><br><span data-bind="area"></span></p>
+    <div class="actions">
+      <a class="btn btn-gold" href="#invitation">View Invitation</a>
+      <a class="btn btn-ghost" href="#venue">View Venue</a>
+    </div>
+  </div>
+  <a class="scroll-ind" href="#invitation" aria-label="Scroll to invitation">&#8964;</a>
+</header>
+
+<!-- ================= INVITATION ================= -->
+<section id="invitation" class="section dark" aria-labelledby="inv-h">
+  <div class="particles" aria-hidden="true"></div>
+  <div class="head reveal"><p class="eyebrow">The Invitation</p><h2 id="inv-h" class="script">Barat Invitation</h2><div class="divider" aria-hidden="true"><span></span><i>❖</i><span></span></div></div>
+  <div class="spot" aria-hidden="true"></div>
+  <button type="button" class="frame reveal reveal-frame" id="invBtn" aria-label="Open the invitation in full screen">
+    <span class="tilt" id="tilt">
+      <img id="invImg" width="1161" height="1548" loading="lazy" decoding="async" alt="">
+      <span class="sweep" aria-hidden="true"></span><span class="hint">Tap to view full screen</span>
+    </span>
+  </button>
+</section>
+
+<!-- ================= VENUE GALLERY ================= -->
+<section id="venue" class="section gallery" aria-labelledby="venue-h">
+  <div class="head reveal"><p class="eyebrow">The Venue</p><h2 id="venue-h" class="script" data-bind="venue"></h2><div class="divider" aria-hidden="true"><span></span><i>❖</i><span></span></div></div>
+  <ul class="gal" id="gal"></ul>
+</section>
+
+<!-- ================= DETAILS ================= -->
+<section id="details" class="section dark" aria-labelledby="det-h">
+  <div class="particles" aria-hidden="true"></div>
+  <div class="head reveal"><p class="eyebrow">Event Details</p><h2 id="det-h" class="script">Join Us</h2><div class="divider" aria-hidden="true"><span></span><i>❖</i><span></span></div></div>
+  <dl class="cards" id="cards"></dl>
+  <div class="actions center reveal">
+    <a class="btn btn-gold" id="mapLink" target="_blank" rel="noopener noreferrer">Get Directions</a>
+    <a class="btn btn-ghost" id="rsvpLink" hidden>RSVP</a>
+  </div>
+</section>
+
+<!-- ================= COUNTDOWN ================= -->
+<section id="countdown" class="section countdown" aria-labelledby="cd-h">
+  <div class="head reveal"><p class="eyebrow">Save the Date</p><h2 id="cd-h" class="script">Counting the Moments</h2><div class="divider" aria-hidden="true"><span></span><i>❖</i><span></span></div></div>
+  <div class="reveal" id="cdBox"></div>
+</section>
+</main>
+
+<!-- ================= CLOSING ================= -->
+<footer class="closing">
+  <div class="florals" aria-hidden="true">
+    <img class="f f-tl" src="images/floral-top.webp" alt="" width="380" height="560" loading="lazy" decoding="async">
+    <img class="f f-tr" src="images/floral-top.webp" alt="" width="380" height="560" loading="lazy" decoding="async">
+    <img class="f f-bl" src="images/floral-bottom.webp" alt="" width="224" height="352" loading="lazy" decoding="async">
+    <img class="f f-br" src="images/floral-bottom.webp" alt="" width="224" height="352" loading="lazy" decoding="async">
+  </div>
+  <div class="closing-inner reveal">
+    <p class="bismillah" lang="ar" dir="rtl">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
+    <p className="translation">“Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.” (Quran 25:74)</p>
+    <p class="serif big">Your presence will make our celebration even more special.</p>
+    <div class="divider" aria-hidden="true"><span></span><i>❖</i><span></span></div>
+    <p class="eyebrow">With warm regards and best wishes.</p>
+    <p class="script sign" data-bind="closingSignature"></p>
+    <button type="button" class="btn btn-ghost" data-share>Share this invitation</button>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <div class="lb-bar">
+    <span class="lb-count" id="lbCount" aria-live="polite"></span>
+    <div>
+      <button type="button" id="lbZoom" aria-label="Zoom in">+</button>
+      <button type="button" id="lbClose" aria-label="Close viewer and return to the invitation">&times;</button>
+    </div>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt="" draggable="false" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+  <p class="lb-cap" id="lbCap"></p>
+  <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <button type="button" class="lb-nav next" id="lbNext" aria-label="Next image">&#8250;</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
