@@ -12,7 +12,11 @@
   var dateLabel = d.year ? d.display + ' ' + d.year : d.display;
   var weekday = '';
   if (d.year) try { weekday = new Date(Date.UTC(d.year, d.month - 1, d.day)).toLocaleDateString('en-GB', { weekday: 'long', timeZone: 'UTC' }); } catch (e) {}
-  var timeLabel = E.time || 'To be announced';
+  var timeLabel = 'To be announced';
+if (E.time) {
+  var tp = E.time.split(':'), th = +tp[0];
+  timeLabel = ((th % 12) || 12) + ':' + tp[1] + ' ' + (th >= 12 ? 'PM' : 'AM');
+}
   var mapsUrl = E.mapUrl || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(E.mapQuery));
   var vals = { bride: E.bride, groom: E.groom, title: E.title, titleUrdu: E.titleUrdu, dateLabel: dateLabel, venue: E.venue, area: E.area, closingSignature: E.closingSignature };
   $$('[data-bind]').forEach(function (el) { el.textContent = vals[el.getAttribute('data-bind')] || ''; });
@@ -45,9 +49,16 @@
     return '<div class="card reveal" style="--d:' + ((i % 2) * 0.1) + 's"><span class="ic" aria-hidden="true">' + r[0] + '</span><dt>' + r[1] + '</dt><dd>' + r[2] + '</dd></div>';
   }).join('');
   $('#mapLink').href = mapsUrl;
-  var rsvp = $('#rsvpLink');
-  if (E.contact.whatsapp) { rsvp.href = 'https://wa.me/' + E.contact.whatsapp.replace(/\D/g, ''); rsvp.hidden = false; }
-  else if (E.contact.rsvpPhone) { rsvp.href = 'tel:' + E.contact.rsvpPhone; rsvp.hidden = false; }
+ var rsvpBox = $('#rsvpList');
+(E.contact.rsvp || []).forEach(function (r) {
+  var a = document.createElement('a');
+  a.className = 'btn btn-ghost';
+  a.textContent = r.label || 'RSVP';
+  a.href = r.whatsapp ? 'https://wa.me/' + r.whatsapp.replace(/\D/g, '')
+                      : 'tel:' + r.phone;
+  if (r.whatsapp) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+  rsvpBox.appendChild(a);
+});
 
   /* ---------- scroll reveals ---------- */
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (en) {

@@ -18,7 +18,14 @@ window.EVENT = {
   mapUrl: 'https://www.google.com/maps/place/Elysian+banquet/@31.4821007,74.294871,15z/data=!3m1!4b1!4m16!1m9!4m8!1m0!1m6!1m2!1s0x391905ccdeede16b:0x7c9ecd4be7ac9515!2sElysian+banquet,+Hall+B,+near+pakistan+engineering+council,+Block+K+Model+Town,+Lahore,+54000,+Pakistan!2m2!1d74.3133251!2d31.4820837!3m5!1s0x391905ccdeede16b:0x7c9ecd4be7ac9515!8m2!3d31.4820837!4d74.3133251!16s%2Fg%2F11xflxpnh3',
   mapQuery: 'Elysian Marquee, Model Town, Lahore, Pakistan', // used only if mapUrl is empty
 
-  contact: { rsvpPhone: '+923236472071', whatsapp: '+923236472071' }, // optional, e.g. "+92xxxxxxxxxx"
+  contact: {
+  rsvp: [
+    { label: 'RSVP – Adil Abdullah', whatsapp: '+923236472071' },
+    { label: 'RSVP – Bilal Abdullah',   whatsapp: '+923234280289' },
+    { label: 'RSVP – Aneeq Imran',   whatsapp: '+923098038433' }
+    // add more lines the same way
+  ]
+},// optional, e.g. "+92xxxxxxxxxx"
 
   invitation: {
     src: 'images/invitation-card.webp', w: 1161, h: 1548,
